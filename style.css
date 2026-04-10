@@ -49,3 +49,10 @@ label,
 button {
   grid-column: 1 / -1;
 }
+
+input,
+textarea,
+select {
+  font: inherit;
+  width: 100%;
+}
