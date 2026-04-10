@@ -7,3 +7,8 @@ body {
     margin-inline: max(1em, (100% - 70ch) / 2);
     padding: 1rem;
   }
+
+nav ul,
+nav li {
+    display: contents;
+}
