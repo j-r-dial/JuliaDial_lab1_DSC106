@@ -45,6 +45,10 @@ form {
   gap: 1em;
 }
 
+label {
+  display: contents;
+}
+
 label,
 button {
   grid-column: 1 / -1;
@@ -56,3 +60,4 @@ select {
   font: inherit;
   width: 100%;
 }
+
