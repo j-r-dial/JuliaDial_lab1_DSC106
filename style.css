@@ -39,16 +39,13 @@ nav a:hover:not(.current) {
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
-input,
-textarea,
-button {
-  font: inherit;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
+form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
-label {
-  display: block;
-  margin-block: 0.5rem;
+label,
+button {
+  grid-column: 1 / -1;
 }
