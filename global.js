@@ -33,7 +33,7 @@ document.body.prepend(nav);
 for (let p of pages) {
     let url = p.url;
   
-    url = !url.startsWith("http") ? BASE_PATH + url : url;
+    url = !url.startsWith("http") ? "./" + url : url;
   
     let title = p.title;
   
