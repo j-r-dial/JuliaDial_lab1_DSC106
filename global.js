@@ -42,10 +42,13 @@ for (let p of pages) {
     a.textContent = title;
     nav.append(a);
 
+    const normalize = (path) => path.replace(/\/$/, "");
+
     a.classList.toggle(
-        'current',
-        a.host === location.host && a.pathname === location.pathname,
-        );
+      'current',
+      a.host === location.host &&
+      normalize(a.pathname) === normalize(location.pathname)
+    );
 
     if (a.host !== location.host) {
             a.target = "_blank";
@@ -61,7 +64,7 @@ document.body.insertAdjacentHTML(
     <label class="color-scheme">
       Theme:
       <select>
-        <option value="light dark">${autoLabel}</option>
+        <option value="light dark">Automatic</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
       </select>
