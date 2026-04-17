@@ -107,5 +107,5 @@ select.addEventListener('input', function (event) {
   
     console.log(url);
   
-    location.href = url; 
+    location.href = url;
   });
