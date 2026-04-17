@@ -1,4 +1,6 @@
-:root {
+html {
+  color-scheme: light dark;
+}:root {
   --color-accent: oklch(65% 50% 0);
 }
 
@@ -19,9 +21,10 @@ nav li {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 1rem;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -38,7 +41,7 @@ nav a.current {
 }
 nav a:hover:not(.current) {
   border-bottom: 2px solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 form {
@@ -95,4 +98,12 @@ h1, h2, h3, h4, h5, h6 {
 body.Resume section {
   padding-block: 1rem;
   border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+.color-scheme {
+  display: inline-block; 
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
 }
