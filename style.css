@@ -107,3 +107,23 @@ body.Resume section {
   right: 1rem;
   font-size: 80%;
 }
+
+dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+dt {
+  grid-row: 1;
+}
+
+dd {
+  grid-row: 2;
+}
+
+.projects img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
