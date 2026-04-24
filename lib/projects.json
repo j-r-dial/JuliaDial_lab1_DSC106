@@ -2,13 +2,13 @@
     {
         "title": "DSC 106 Project 1 - Expository Visualization",
         "year": "2026",
-        "image": "/images/project 1 vis.jpg",
+        "image": "../images/project 1 vis.jpg",
         "description": "Cleaned, explored, and analyzed a grocery store data set with over 50,000 rows of food item data to create an expository visualization. This visualizes the difference in average prices of brands sold at Walmart, Target, and Whole Foods"
     },
     {
         "title": "Power Outage Duration Project",
         "year": "2025",
-        "image": "/images/image for website.jpg",
+        "image": "../images/image for website.jpg",
         "description": "DSC 80 culminating project where a partner and I explored a power outage data set: perfomring hypothesis tests, creating uni-variate and bivariate visualizations, building a baseline regression model, and feature engineering and hyperparameter tunning to train a final model for predicting outage duration based on geographical location."
     },
     {
