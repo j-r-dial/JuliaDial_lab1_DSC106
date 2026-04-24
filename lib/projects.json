@@ -1,0 +1,74 @@
+[
+    {
+        "title": "DSC 106 Project 1 - Expository Visualization",
+        "year": "2026",
+        "image": "/images/project 1 vis.jpg",
+        "description": "Cleaned, explored, and analyzed a grocery store data set with over 50,000 rows of food item data to create an expository visualization. This visualizes the difference in average prices of brands sold at Walmart, Target, and Whole Foods"
+    },
+    {
+        "title": "Power Outage Duration Project",
+        "year": "2025",
+        "image": "/images/image for website.jpg",
+        "description": "DSC 80 culminating project where a partner and I explored a power outage data set: perfomring hypothesis tests, creating uni-variate and bivariate visualizations, building a baseline regression model, and feature engineering and hyperparameter tunning to train a final model for predicting outage duration based on geographical location."
+    },
+    {
+        "title": "DSC 106 Project 2 - Persuasive/Deceptive Visualization",
+        "year": "2026",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Collaborated in a group to produce one visualization to persuade a viewer in favor of a proposition and one intentionally deceptive visualization to refute the proposition."
+    },
+    {
+        "title": "Nihil architecto aspernatur quisquam?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Adipisci rem accusamus minima eaque quidem alias, perferendis aspernatur? Magni at beatae maiores unde quis similique fuga aliquid? Autem debitis nobis sapiente alias, odio recusandae distinctio id mollitia dolore corrupti."
+    },
+    {
+        "title": "Vitae rem quisquam nobis!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Tenetur a qui soluta? Excepturi eligendi assumenda voluptas error provident exercitationem corporis eum dicta, possimus voluptates repellat delectus officiis, harum, quasi reprehenderit iste? Enim eligendi, quasi corrupti expedita obcaecati modi!"
+    },
+    {
+        "title": "Officia inventore sed earum?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Error officia eius nesciunt cupiditate quisquam voluptatibus aliquam! Et laudantium ex corrupti necessitatibus ea debitis rerum officiis cupiditate cum molestiae maxime vitae, totam placeat architecto praesentium fuga? Porro, vero temporibus?"
+    },
+    {
+        "title": "Vitae quasi nesciunt rerum?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Voluptatem, veritatis commodi! Explicabo, pariatur facere in, voluptate, ipsa provident fugit laudantium iure perspiciatis dolorem expedita inventore hic magni natus iste dignissimos beatae autem ad. Nulla mollitia distinctio possimus? Ut!"
+    },
+    {
+        "title": "Voluptates consequuntur ex itaque.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Ipsa fuga repellendus velit sunt tempora, nisi quia magnam itaque? Hic iure similique illo expedita. Numquam ab id porro? Veniam inventore hic exercitationem quis minus odio veritatis nihil asperiores nostrum?"
+    },
+    {
+        "title": "Possimus blanditiis illo voluptates!",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Commodi, soluta magnam explicabo corporis nobis ex aliquid nostrum cum voluptate vero ea hic aperiam blanditiis, suscipit odio quibusdam iusto, dolorum consequatur dolores labore eveniet error neque sapiente! Reprehenderit, expedita?"
+    },
+    {
+        "title": "Eos dolorum deserunt quos.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Aspernatur tempora porro dolores neque molestias libero fuga adipisci laudantium dolore, sint officia vel et veritatis velit expedita aliquam, deleniti, perferendis quam voluptate laboriosam quaerat. Sint fugit earum consectetur magnam."
+    },
+    {
+        "title": "Reprehenderit, sit? Incidunt, a?",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Fugit, adipisci quisquam enim rem ullam ipsum dicta soluta dolore quasi labore cum aliquam, nobis sequi debitis hic nemo voluptas veniam? Minima officiis totam impedit debitis consequuntur explicabo fugit dicta!"
+    },
+    {
+        "title": "Debitis maiores obcaecati minus.",
+        "year": "2024",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Consectetur, quo ut optio accusamus blanditiis quisquam saepe sit fugiat magni inventore eveniet cupiditate voluptas vel quam voluptatem, unde qui atque! Placeat repellat sequi facilis illo voluptates excepturi, nam quas!"
+    }
+]
