@@ -136,7 +136,7 @@ select.addEventListener('input', function (event) {
       const article = document.createElement('article');
       article.innerHTML = `
       <${headingLevel}>${current.title}</${headingLevel}>
-      <img src="${current.image}" alt="${current.title}">
+      <img src="${BASE_PATH + current.image}" alt="${current.title}">
       <p>${current.description}</p>
   `;
       containerElement.appendChild(article);
