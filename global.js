@@ -134,7 +134,7 @@ select.addEventListener('input', function (event) {
     for (let i=0; i < project.length; i+=1){
       const current = project[i]
       const article = document.createElement('article');
-      const isExternal = current.image.startsWith('http');
+      const isExternal = current.image.startsWith('https://');
       const imageSrc = isExternal
         ? current.image
         : BASE_PATH + current.image;
@@ -145,8 +145,10 @@ select.addEventListener('input', function (event) {
       <img src="${imageSrc}" alt="${current.title}">
       
       <p>${current.description}</p>
+
   `;
       containerElement.appendChild(article);
+      console.log(current.image, imageSrc);
     
     }
    
