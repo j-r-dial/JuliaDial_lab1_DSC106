@@ -127,3 +127,19 @@ dd {
   height: auto;
   object-fit: cover;
 }
+
+.intro {
+  display: flex;
+  align-items: center;   /* vertically centers text with image */
+  gap: 20px;             /* space between text and image */
+}
+
+.intro img {
+  width: 250px;          /* adjust as needed */
+  height: auto;
+  border-radius: 10px;   /* optional styling */
+}
+
+.intro-text {
+  max-width: 500px;
+}
