@@ -14,12 +14,10 @@ let query = '';
 
 let searchInput = document.querySelector('.searchBar');
 
-function setQuery(value) {
-    query = value.toLowerCase();
-  
-    return projects.filter((project) => {
+function setQuery(data, value) {
+    return data.filter((project) => {
       let values = Object.values(project).join('\n').toLowerCase();
-      return values.includes(query);
+      return values.includes(value.toLowerCase());
     });
   }
 
@@ -94,10 +92,13 @@ function renderPieChart(projectsGiven) {
   renderPieChart(projects);
 
   searchInput.addEventListener('input', (event) => {
-    let filteredProjects = setQuery(event.target.value);
+    searchQuery = event.target.value;
     selectedIndex = -1;
+
+    let filtered = setQuery(projects, searchQuery);
+    renderPieChart(filtered);
     // re-render legends and pie chart when event triggers
-    renderPieChart(filteredProjects);
+    // renderPieChart(filteredProjects);
 
   });
 
