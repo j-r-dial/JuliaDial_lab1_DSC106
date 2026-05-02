@@ -25,7 +25,7 @@ function setQuery(data, value) {
   let searchQuery = ''; //change for comibined filter
 
 function renderPieChart(projectsGiven) {
-    
+  
     let newRolledData = d3.rollups(
       projectsGiven,
       (v) => v.length,
@@ -73,7 +73,8 @@ function renderPieChart(projectsGiven) {
           .attr('class', i === selectedIndex ? 'selected' : '')
           .on('click', () => {
             selectedIndex = selectedIndex === i ? -1 : i;
-            renderPieChart(projectsGiven);
+            let searchFiltered = setQuery(projects, searchQuery);
+            renderPieChart(searchFiltered);
           });
 
       });
@@ -93,7 +94,6 @@ function renderPieChart(projectsGiven) {
 
   searchInput.addEventListener('input', (event) => {
     searchQuery = event.target.value;
-    selectedIndex = -1;
 
     let filtered = setQuery(projects, searchQuery);
     renderPieChart(filtered);
