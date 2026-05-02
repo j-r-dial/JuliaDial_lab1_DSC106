@@ -18,57 +18,57 @@
         "description": "Collaborated in a group to produce one visualization to persuade a viewer in favor of a proposition and one intentionally deceptive visualization to refute the proposition."
     },
     {
-        "title": "Nihil architecto aspernatur quisquam?",
-        "year": "2024",
+        "title": "DSC 80 Language Model Project",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Adipisci rem accusamus minima eaque quidem alias, perferendis aspernatur? Magni at beatae maiores unde quis similique fuga aliquid? Autem debitis nobis sapiente alias, odio recusandae distinctio id mollitia dolore corrupti."
+        "description": "Developed unigram and n-gram language models by implementing tokenization, probability estimation, and text generation to evaluate corpus patterns."
     },
     {
-        "title": "Vitae rem quisquam nobis!",
-        "year": "2024",
+        "title": "DSC80 API Project",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Tenetur a qui soluta? Excepturi eligendi assumenda voluptas error provident exercitationem corporis eum dicta, possimus voluptates repellat delectus officiis, harum, quasi reprehenderit iste? Enim eligendi, quasi corrupti expedita obcaecati modi!"
+        "description": "Implemented a compliant web-scraping pipeline (respecting robots.txt) to collect training data, optimizing parsing and data-handling workflows. "
     },
     {
-        "title": "Officia inventore sed earum?",
+        "title": "Connect 4 Project",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Error officia eius nesciunt cupiditate quisquam voluptatibus aliquam! Et laudantium ex corrupti necessitatibus ea debitis rerum officiis cupiditate cum molestiae maxime vitae, totam placeat architecto praesentium fuga? Porro, vero temporibus?"
+        "description": "Used Python to programm a Connect 4 game that was interactive with user inputs"
     },
     {
-        "title": "Vitae quasi nesciunt rerum?",
-        "year": "2024",
+        "title": "Penn State Engineering Design Project",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Voluptatem, veritatis commodi! Explicabo, pariatur facere in, voluptate, ipsa provident fugit laudantium iure perspiciatis dolorem expedita inventore hic magni natus iste dignissimos beatae autem ad. Nulla mollitia distinctio possimus? Ut!"
+        "description": "Led a team to design, prototype, and present an improved clothing-hanger solution for Goodwill Keystone, applying modeling and evaluation methods to enhance functionality and sustainability. "
     },
     {
-        "title": "Voluptates consequuntur ex itaque.",
+        "title": "DSC10 Music Project",
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ipsa fuga repellendus velit sunt tempora, nisi quia magnam itaque? Hic iure similique illo expedita. Numquam ab id porro? Veniam inventore hic exercitationem quis minus odio veritatis nihil asperiores nostrum?"
+        "description": "Analyzed a data set containing Taylor Swifts discography and other information about the artist."
     },
     {
-        "title": "Possimus blanditiis illo voluptates!",
-        "year": "2024",
+        "title": "DSC 30 Java Classes Project",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Commodi, soluta magnam explicabo corporis nobis ex aliquid nostrum cum voluptate vero ea hic aperiam blanditiis, suscipit odio quibusdam iusto, dolorum consequatur dolores labore eveniet error neque sapiente! Reprehenderit, expedita?"
+        "description": "Created classes and inheritance relationships in Java"
     },
     {
-        "title": "Eos dolorum deserunt quos.",
-        "year": "2024",
+        "title": "Goodwill Keystone Hangers Project",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Aspernatur tempora porro dolores neque molestias libero fuga adipisci laudantium dolore, sint officia vel et veritatis velit expedita aliquam, deleniti, perferendis quam voluptate laboriosam quaerat. Sint fugit earum consectetur magnam."
+        "description": "Collaborated on a team to design, prototype, and present an alternative hanger design to improve efficiency in Goodwill's clothes hanging process."
     },
     {
-        "title": "Reprehenderit, sit? Incidunt, a?",
-        "year": "2024",
+        "title": "DSC 102 Dask Project",
+        "year": "2026",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Fugit, adipisci quisquam enim rem ullam ipsum dicta soluta dolore quasi labore cum aliquam, nobis sequi debitis hic nemo voluptas veniam? Minima officiis totam impedit debitis consequuntur explicabo fugit dicta!"
+        "description": "Used Dask and AWS EC2 instances to build a realtional data table containing information about 1000s of Amazon customer reviews."
     },
     {
-        "title": "Debitis maiores obcaecati minus.",
-        "year": "2024",
+        "title": "DSC 102 Memory Project",
+        "year": "2026",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Consectetur, quo ut optio accusamus blanditiis quisquam saepe sit fugiat magni inventore eveniet cupiditate voluptas vel quam voluptatem, unde qui atque! Placeat repellat sequi facilis illo voluptates excepturi, nam quas!"
+        "description": "Explored the concepts of memory levels, locality, row verses column matrix traversal, and contigous memory access."
     }
 ]
