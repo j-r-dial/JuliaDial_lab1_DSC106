@@ -139,19 +139,20 @@ select.addEventListener('input', function (event) {
         ? current.image
         : BASE_PATH + current.image;
       
-      article.innerHTML = `
-      <${headingLevel}>${current.title}</${headingLevel}>
-      
-      <img src="${imageSrc}" alt="${current.title}">
-      
-      <p>${current.description}</p>
-
-  `;
+        article.innerHTML = `
+        <${headingLevel}>${current.title}</${headingLevel}>
+        
+        <img src="${imageSrc}" alt="${current.title}">
+        
+        <div class="project-text">
+          <p>${current.description}</p>
+          <p class="project-year">${current.year}</p>
+        </div>
+      `;
+  
       containerElement.appendChild(article);
       console.log(current.image, imageSrc);
-    
     }
-   
   }
 
   export async function fetchGitHubData(username) {
