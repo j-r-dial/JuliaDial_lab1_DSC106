@@ -188,3 +188,103 @@ path {
 .selected:is(path) {
     fill: var(--color);
   }
+
+  dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  dt {
+    grid-row: 1;
+  }
+  
+  dd {
+    grid-row: 2;
+  }
+
+  .gridlines line {
+    stroke: #ddd;
+    stroke-opacity: 0.5;
+    shape-rendering: crispEdges;
+  }
+
+  dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.5rem;
+    row-gap: 0.25rem;
+  
+    margin: 0;
+  }
+  
+  dl.info dt {
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.7; 
+  }
+  
+  dl.info dd {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+  }
+
+
+  circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  circle:hover {
+    transform: scale(1.5);
+  }
+
+  dl.info {
+    background-color: rgba(255, 255, 255, 0.85);
+  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+    border-radius: 8px;
+  
+    padding: 0.75rem;
+  
+    font-size: 0.9rem;
+  
+    backdrop-filter: blur(6px);
+  
+    pointer-events: none;
+    transition-duration: 500ms;
+    transition-property: opacity, visibility;
+  }
+
+ 
+  
+  dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @keyframes marching-ants {
+    to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+    }
+  }
+  
+  .selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+
+
+  circle.selected {
+    fill: #ff6b6b;
+  }
