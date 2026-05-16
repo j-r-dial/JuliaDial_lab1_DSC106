@@ -9,13 +9,21 @@
         "title": "Power Outage Duration Project",
         "year": "2025",
         "image": "images/image-for-website.jpg",
-        "description": "DSC 80 culminating project where a partner and I explored a power outage data set: perfomring hypothesis tests, creating uni-variate and bivariate visualizations, building a baseline regression model, and feature engineering and hyperparameter tunning to train a final model for predicting outage duration based on geographical location."
+        "description": "DSC 80 culminating project where a partner and I explored a power outage data set: perfomring hypothesis tests, creating uni-variate and bivariate visualizations, building a baseline regression model, and feature engineering and hyperparameter tunning to train a final model for predicting outage duration based on geographical location.",
+        "url": "https://j-r-dial.github.io/Outages-Project/"
     },
     {
         "title": "DSC 106 Project 2 - Persuasive/Deceptive Visualization",
         "year": "2026",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Collaborated in a group to produce one visualization to persuade a viewer in favor of a proposition and one intentionally deceptive visualization to refute the proposition."
+    },
+    {
+        "title": "Interactive Bikewatching Map",
+        "year": "2026",
+        "image": "image/bike.jpg",
+        "description": "Built an interactive bikewatching visualization of the Boston and Cambridge area that includes a time slider and circles with radii corresponding to the amount of departures and arrivals. ",
+        "url": "https://j-r-dial.github.io/Bikes/"
     },
     {
         "title": "DSC 80 Language Model Project",
@@ -35,12 +43,7 @@
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Used Python to programm a Connect 4 game that was interactive with user inputs"
     },
-    {
-        "title": "Engineering Design Project",
-        "year": "2023",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Led a team to design, prototype, and presented an improved use of land on Penn State's campus that targeted functionality and sustainability. "
-    },
+    
     {
         "title": "DSC10 Music Project",
         "year": "2024",
