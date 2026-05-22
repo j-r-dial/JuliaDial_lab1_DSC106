@@ -21,7 +21,7 @@
     {
         "title": "Interactive Bikewatching Map",
         "year": "2026",
-        "image": "image/bike.jpg",
+        "image": "images/bike.jpg",
         "description": "Built an interactive bikewatching visualization of the Boston and Cambridge area that includes a time slider and circles with radii corresponding to the amount of departures and arrivals. ",
         "url": "https://j-r-dial.github.io/Bikes/"
     },
