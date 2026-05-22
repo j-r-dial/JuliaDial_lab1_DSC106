@@ -1,4 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
+import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 async function loadData() {
     const data = await d3.csv('loc.csv', (row) => ({
@@ -120,16 +121,16 @@ function renderScatterPlot(data, commits) {
     const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
 
     // Use sortedCommits in your selection instead of commits
-    dots.selectAll('circle').data(sortedCommits).join('circle');
+    // dots.selectAll('circle').data(sortedCommits).join('circle');
 
-    dots
-        .selectAll('circle')
-        .data(commits)
-        .join('circle')
-        .attr('cx', (d) => xScale(d.datetime))
-        .attr('cy', (d) => yScale(d.hourFrac))
-        .attr('r', 5)
-        .attr('fill', 'steelblue');
+    // dots
+    //     .selectAll('circle')
+    //     .data(sortedCommits, (d) => d.id) // change this line
+    //     .join('circle')
+    //     .attr('cx', (d) => xScale(d.datetime))
+    //     .attr('cy', (d) => yScale(d.hourFrac))
+    //     .attr('r', 5)
+    //     .attr('fill', 'steelblue');
 
 
     const gridlines = svg
@@ -137,7 +138,7 @@ function renderScatterPlot(data, commits) {
         .attr('class', 'gridlines')
         .attr('transform', `translate(${usableArea.left}, 0)`);
   
-    // Create gridlines as an axis with no labels and full-width ticks
+    
     gridlines.call(d3.axisLeft(yScale).tickFormat('').tickSize(-usableArea.width))
         .selectAll('.tick line')
         .style('stroke', (d) => {
@@ -153,14 +154,16 @@ function renderScatterPlot(data, commits) {
         .axisLeft(yScale)
         .tickFormat((d) => String(d % 24).padStart(2, '0') + ':00');
     
-    svg
+        svg
         .append('g')
         .attr('transform', `translate(0, ${usableArea.bottom})`)
+        .attr('class', 'x-axis') // new line to mark the g tag
         .call(xAxis);
-
-    svg
+    
+      svg
         .append('g')
         .attr('transform', `translate(${usableArea.left}, 0)`)
+        .attr('class', 'y-axis') // just for consistency
         .call(yAxis);
 
     const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
@@ -171,12 +174,13 @@ function renderScatterPlot(data, commits) {
 
     dots
         .selectAll('circle')
-        .data(commits)
+        .data(sortedCommits, (d) => d.id) // change this line
         .join('circle')
         .attr('cx', (d) => xScale(d.datetime))
         .attr('cy', (d) => yScale(d.hourFrac))
         .attr('r', (d) => rScale(d.totalLines))
         .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+        .style('--r', d => rScale(d.totalLines))
         .on('mouseenter', (event, commit) => {
             d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
             renderTooltipContent(commit);
@@ -189,9 +193,64 @@ function renderScatterPlot(data, commits) {
     });
     createBrushSelector(svg);
 
+
   }
   
   renderScatterPlot(data, commits);
+
+  function updateScatterPlot(data, commits) {
+    const width = 1000;
+    const height = 600;
+    const margin = { top: 10, right: 10, bottom: 30, left: 20 };
+    const usableArea = {
+      top: margin.top,
+      right: width - margin.right,
+      bottom: height - margin.bottom,
+      left: margin.left,
+      width: width - margin.left - margin.right,
+      height: height - margin.top - margin.bottom,
+    };
+  
+    const svg = d3.select('#chart').select('svg');
+  
+    xScale = xScale.domain(d3.extent(commits, (d) => d.datetime));
+  
+    const [minLines, maxLines] = d3.extent(commits, (d) => d.totalLines);
+    const rScale = d3.scaleSqrt().domain([minLines, maxLines]).range([2, 30]);
+  
+    const xAxis = d3.axisBottom(xScale);
+  
+    // CHANGE: we should clear out the existing xAxis and then create a new one
+
+    const xAxisGroup = svg.select('g.x-axis');
+    xAxisGroup.selectAll('*').remove();
+    xAxisGroup.call(xAxis);
+  
+    const dots = svg.select('g.dots');
+  
+    const sortedCommits = d3.sort(commits, (d) => -d.totalLines);
+    dots
+      .selectAll('circle')
+      .data(sortedCommits, (d) => d.id) // change this line
+      .join('circle')
+      .attr('cx', (d) => xScale(d.datetime))
+      .attr('cy', (d) => yScale(d.hourFrac))
+      .attr('r', (d) => rScale(d.totalLines))
+      .attr('fill', 'steelblue')
+      .style('--r', d => rScale(d.totalLines))
+      .style('fill-opacity', 0.7) // Add transparency for overlapping dots
+      .on('mouseenter', (event, commit) => {
+        d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
+        renderTooltipContent(commit);
+        updateTooltipVisibility(true);
+        updateTooltipPosition(event);
+      })
+      .on('mouseleave', (event) => {
+        d3.select(event.currentTarget).style('fill-opacity', 0.7);
+        updateTooltipVisibility(false);
+      });
+
+  }
 
 
   function renderTooltipContent(commit) {
@@ -292,3 +351,128 @@ function renderScatterPlot(data, commits) {
         }
       }
 
+  let commitProgress = 100;
+
+  let timeScale = d3
+  .scaleTime()
+  .domain([
+    d3.min(commits, (d) => d.datetime),
+    d3.max(commits, (d) => d.datetime),
+  ])
+  .range([0, 100]);
+
+let commitMaxTime = timeScale.invert(commitProgress);
+let filteredCommits = commits;
+
+let lines = filteredCommits.flatMap((d) => d.lines);
+let files = d3
+  .groups(lines, (d) => d.file)
+  .map(([name, lines]) => {
+    return { name, lines };
+  });
+
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
+function updateFileDisplay(filteredCommits){
+  let lines = filteredCommits.flatMap((d) => d.lines);
+
+  let files = d3
+  .groups(lines, (d) => d.file)
+  .map(([name, lines]) => {
+    return { name, lines };
+  })
+  .sort((a, b) => b.lines.length - a.lines.length);
+
+  let filesContainer = d3
+  .select('#files')
+  .selectAll('div')
+  .data(files, (d) => d.name)
+  .join(
+    // This code only runs when the div is initially rendered
+    (enter) =>
+      enter.append('div').call((div) => {
+        div.append('dt').append('code');
+        div.append('dd');
+      }),
+  );
+
+  // This code updates the div info
+  filesContainer.select('dt').html((d) => `
+  <code>${d.name}</code>
+  <small>${d.lines.length} lines</small>
+`);
+  // append one div for each line
+  filesContainer
+    .select('dd')
+    .selectAll('div')
+    .data((d) => d.lines)
+    .join('div')
+    .attr('class', 'loc')
+    .attr('style', (d) => `--color: ${colors(d.type)}`);
+}
+
+
+function onTimeSliderChange() {
+  const slider = document.getElementById("commit-progress");
+  const timeEl = document.getElementById("commit-time");
+
+  commitProgress = +slider.value;
+  commitMaxTime = timeScale.invert(commitProgress);
+  timeEl.textContent = commitMaxTime.toLocaleString(undefined, {
+    dateStyle: "long",
+    timeStyle: "short"
+  });
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  updateScatterPlot(data, filteredCommits);
+
+  updateFileDisplay(filteredCommits);
+}
+
+
+document
+  .getElementById("commit-progress")
+  .addEventListener("input", onTimeSliderChange);
+
+onTimeSliderChange();
+
+
+d3.select('#scatter-story')
+  .selectAll('.step')
+  .data(commits)
+  .join('div')
+  .attr('class', 'step')
+  .html(
+    (d, i) => `
+		On ${d.datetime.toLocaleString('en', {
+      dateStyle: 'full',
+      timeStyle: 'short',
+    })},
+		I made <a href="${d.url}" target="_blank">${
+      i > 0 ? 'another commit' : 'my first commit'
+    }</a>.
+		I edited ${d.totalLines} lines across ${
+      d3.rollups(
+        d.lines,
+        (D) => D.length,
+        (d) => d.file,
+      ).length
+    } files.
+		All commits made.
+	`,
+  );
+
+function onStepEnter(response) {
+  commitMaxTime = response.element.__data__.datetime;
+  filteredCommits = commits.filter((d) => d.datetime <= commitMaxTime);
+  updateScatterPlot(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
+  }
+  
+const scroller = scrollama();
+  scroller
+    .setup({
+      container: '#scrolly-1',
+      step: '#scrolly-1 .step',
+    })
+    .onStepEnter(onStepEnter);
+  
