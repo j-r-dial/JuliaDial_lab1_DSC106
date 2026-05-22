@@ -117,10 +117,6 @@ dt {
   grid-row: 1;
 }
 
-dd {
-  grid-row: 2;
-}
-
 .projects img {
   width: 100%;
   max-width: 300px;
@@ -193,14 +189,10 @@ path {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
-  
-  dt {
-    grid-row: 1;
+  #files {
+    grid-template-columns: 1fr 4fr; /* override for #files specifically */
   }
-  
-  dd {
-    grid-row: 2;
-  }
+
 
   .gridlines line {
     stroke: #ddd;
@@ -234,11 +226,15 @@ path {
     left: 1em;
   }
 
-
   circle {
     transition: 200ms;
     transform-origin: center;
     transform-box: fill-box;
+    transition: all 200ms, r calc(var(--r) * 100ms);
+  
+    @starting-style {
+      r: 0;
+    }
   }
   
   circle:hover {
@@ -287,4 +283,68 @@ path {
 
   circle.selected {
     fill: #ff6b6b;
+  }
+  .loc {
+    display: flex;
+    width: 0.5em;
+    aspect-ratio: 1;
+    background: var(--color);
+    border-radius: 50%;
+  }
+  
+  #files {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 1em;
+
+  }
+  
+  #files > div {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  
+  #files dt {
+    grid-row: unset;
+    grid-column: 1;
+  }
+  
+  #files dd {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    gap: 0.15em;
+    padding-top: 0.6em;
+    margin-left: 0;
+  }
+  
+  #files small {
+    display: block;
+    font-size: 0.75em;
+    opacity: 0.6;
+  }
+
+  #scrolly-1 {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+  
+    > * {
+      flex: 1;
+    }
+  }
+  
+  #scatter-story {
+    position: relative;
+  }
+  
+  #scatter-plot {
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    height: 50vh;
   }
